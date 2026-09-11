@@ -141,14 +141,6 @@ After eating enough text, the goat becomes full and burps loud.
 ---
 
 ## Project Demo
-
-### Video
-
-**Demo Video:**
-Add your project demonstration video link here.
-
-The video demonstrates the complete interaction, including typing, the goat waking up, approaching the text, eating the words, growing bigger, getting tired, and returning.
-
 ---
 
 ## Additional Demos
