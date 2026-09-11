@@ -203,8 +203,101 @@ Made with ❤️ and absolutely no necessity at all at **TinkerHub Useless Proje
 
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Workflow]      ┌─────────────────────┐
+                 │       START         │
+                 └──────────┬──────────┘
+                            ↓
+                 ┌─────────────────────┐
+                 │   User opens the    │
+                 │      website        │
+                 └──────────┬──────────┘
+                            ↓
+                 ┌─────────────────────┐
+                 │   Goat is sleeping  │
+                 └──────────┬──────────┘
+                            ↓
+                 ┌─────────────────────┐
+                 │   User starts       │
+                 │      typing         │
+                 └──────────┬──────────┘
+                            ↓
+                 ┌─────────────────────┐
+                 │ JavaScript detects  │
+                 │     user input      │
+                 └──────────┬──────────┘
+                            ↓
+                 ┌─────────────────────┐
+                 │   Goat wakes up     │                     │
+                 └──────────┬──────────┘
+                            ↓
+                 ┌─────────────────────┐
+                 │ Goat eats the text  │
+                 │ from the right side │
+                 └──────────┬──────────┘
+                            ↓
+                 ┌─────────────────────┐
+                 │   Goat's stomach    │
+                 │      grows          │
+                 └──────────┬──────────┘
+                            ↓
+                    ┌───────────────┐
+                    │  user stoped  |
+                    │    typing     |
+                    └───────┬───────┘
+                       NO   │   YES
+                       ↓    │    ↓
+                 ┌─────────┐│ ┌─────────────────┐
+                 │ Continue││ │ Goat gets tired │
+                 │ eating  ││ └────────┬────────┘
+                 └────┬────┘│          |
+                      │     │          |
+                      └─────┘          |
+                            │          |
+                            │          ↓
+                            │ ┌─────────────────┐
+                            │ │ Goat burps      │
+                            │ └────────┬────────┘
+                            │          ↓
+                            │ ┌─────────────────┐
+                            └→│ Ready to eat    │
+                              │     again       │
+                              └─────────────────┘)
+*## Workflow
 
+The Goat Life website follows a simple interactive workflow:
+
+1. **Website Starts**
+   When the user opens the website, the goat is initially in a sleeping state.
+
+2. **User Interaction**
+   The user begins typing text into the website's input area.
+
+3. **Input Detection**
+   JavaScript continuously detects the user's typing and triggers the goat's interaction.
+
+4. **Goat Wakes Up**
+   When text is entered, the sleeping goat wakes up.
+
+5. **Eating the Text**
+   The goat eats the typed words from the right side. The website dynamically updates the text as the goat consumes it.
+
+6. **Stomach Growth**
+   As the goat eats more text, its stomach visually increases to represent how much it has eaten.
+
+7. **Stopping Check**
+   The system checks whether the user has stoped typing.
+
+   * If no, it continues eating.
+   * If yes, it stops eating.
+
+9. **Burp**
+   The goat performs a burping animation.
+
+10. **Ready for Another Meal**
+    After completing the animation, the goat returns to its idle state and is ready to interact with new text again.
+
+### Overall Flow
+
+**User opens website → Goat sleeps → User types → Goat eats text → Stomach grows → Guser stops → Goat stops eating → Goat burps → Goat is ready again.**
+
+The workflow combines **HTML for the structure, CSS for visual styling and animations, and JavaScript for detecting user input and controlling the goat's behavior.**
