@@ -130,7 +130,7 @@ The goat starts in a sleeping state while the user has not entered any text.
 <img width="1900" height="837" alt="eating" src="https://github.com/user-attachments/assets/a71bd020-77ca-48cf-9ade-9eb92fa81502" />
 
 
-The goat wakes up and moves toward the user's text to eat it.
+The goat wakes up when the user types and eats it.
 
 ### Screenshot 3 — Burping Of Goat
 
