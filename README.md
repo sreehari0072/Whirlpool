@@ -1,4 +1,4 @@
-# Goat Life 🎯
+# Goat Life 🐐
 
 ## Basic Details
 
