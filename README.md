@@ -2,39 +2,40 @@
 
 
 
-# [Project Name] 🎯
+# Goat Life 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Whirlpool
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
+- Team Lead: Sreehari G - College Of Engineering Perumon
+- Member 2: Kenston Ignatious - College Of Engineering Perumon
 - Member 3: [Name] - [College]
 
 ### Project Description
-[2-3 lines about what your project does]
+Goatlife.com is a completely useless and unnecessarily entertaining website where a goat eats whatever the user types. The goat wakes up, walks toward the text, eats the words from the right side, grows a bigger stomach, gets tired, walks back, burps, and returns for more.
+
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+People can type peacefully without being interrupted by a hungry goat. We identified this as a serious problem that absolutely nobody asked us to solve.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+We introduced a hungry virtual goat that follows the user's typing, walks toward their words, eats them, grows bigger, gets tired, burps, and comes back for another meal. In short, we made typing unnecessarily difficult for absolutely no reason.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- HTML
+- CSS
+- JavaScript
+- JavaScript Animation APIs / CSS Animations
+- - Git & GitHub
+- Antigravity / Vibe Coding
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+-No hardware required
 
 ### Implementation
 For Software:
