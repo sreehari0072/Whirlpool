@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goatlife.com | The Goat That Eats Your Website</title>
+  <meta name="description" content="Type something. We promise nothing will happen. Unfortunately, there's a goat on the grassy road. A hilarious, interactive useless website on Goatlife.com.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Outfit:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app-wrapper">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-brand">
+        <span class="brand-goat-icon">🐐</span>
+        <div class="brand-text">
+          <span class="brand-domain">Goatlife<span class="domain-dot">.com</span></span>
+          <span class="brand-tagline">the goat that eats your website</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="sound-toggle-btn" class="header-btn" title="Toggle Sound" aria-label="Toggle Sound">
+          <span id="sound-icon">🔊</span>
+          <span class="btn-text">Audio</span>
+        </button>
+        <button id="stats-modal-btn" class="header-btn" title="Leaderboard & Stats" aria-label="Leaderboard">
+          <span>🏆</span>
+          <span class="btn-text">Grazing Stats</span>
+        </button>
+        <button id="ai-key-btn" class="header-btn ai-btn" title="Optional AI Roasts">
+          <span>✨</span>
+          <span class="btn-text">AI Roast</span>
+        </button>
+        <button id="clear-btn" class="header-btn reset-btn" title="Reset Text & Goat">
+          <span>🧹</span>
+          <span class="btn-text">Reset</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Interactive Arena -->
+    <main class="main-content">
+      <div class="hero-section">
+        <h1 class="main-heading">Type something. We promise nothing will happen.</h1>
+        <p class="subtext">Unfortunately, there's a goat.</p>
+      </div>
+
+      <!-- Live Goat HUD Status Bar -->
+      <div class="hud-status-bar">
+        <div class="hud-item counter-pill">
+          <span class="hud-icon">🍽️</span>
+          <span id="hud-counter" class="hud-val">GOAT ATE: 0 LETTERS</span>
+        </div>
+        <div class="hud-item hunger-pill">
+          <span class="hud-icon">🌿</span>
+          <span id="hud-fullness" class="hud-val">HUNGER: STARVING</span>
+        </div>
+        <div class="hud-item speed-pill">
+          <span class="hud-icon">⚡</span>
+          <span id="hud-speed" class="hud-val">0 CPM</span>
+        </div>
+      </div>
+
+      <!-- Grassy Terrain & Country Road Environment -->
+      <div class="terrain-container">
+        <div class="terrain-field">
+          <!-- Background Nature Decor: stylized fence posts, wildflowers, and clover patches -->
+          <div class="field-scenery">
+            <div class="scenery-fence">
+              <span class="fence-post">🪵</span>
+              <span class="fence-wire"></span>
+              <span class="fence-post">🪵</span>
+              <span class="fence-wire"></span>
+              <span class="fence-post">🪵</span>
+              <span class="fence-wire"></span>
+              <span class="fence-post">🪵</span>
+            </div>
+            <div class="scenery-flora">
+              <span class="flora f1">🍀</span>
+              <span class="flora f2">🌼</span>
+              <span class="flora f3">🌾</span>
+              <span class="flora f4">🌱</span>
+              <span class="flora f5">🌸</span>
+              <span class="flora f6">🍀</span>
+              <span class="flora f7">🌼</span>
+            </div>
+          </div>
+
+          <!-- Textarea: transparent meadow overlay, text rests naturally along the road -->
+          <div class="terrain-input-wrap">
+            <textarea
+              id="user-input"
+              placeholder="Type your words along the road... (The goat is sleeping on the right)"
+              spellcheck="false"
+              autocomplete="off"
+              autofocus
+            ></textarea>
+          </div>
+
+          <!-- Rustic Dirt Road along bottom where text sits and goat walks -->
+          <div class="terrain-road">
+            <div class="road-track">
+              <div class="road-trail-line"></div>
+              <div class="road-stones">
+                <span class="pebble p1"></span>
+                <span class="pebble p2"></span>
+                <span class="pebble p3"></span>
+                <span class="pebble p4"></span>
+                <span class="pebble p5"></span>
+                <span class="pebble p6"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Goat Rig: Starts resting on the right side of the road! -->
+          <div id="goat-stage" class="goat-wrapper on-road" data-state="SLEEPING">
+            <!-- Floating Comic Layers -->
+            <div id="zzz-layer" class="zzz-container"></div>
+            <div id="goat-alert-mark" class="goat-alert">!</div>
+            
+            <!-- Speech Bubble -->
+            <div id="goat-speech-bubble" class="goat-speech">
+              <span id="goat-speech-text">Zzz...</span>
+              <div class="speech-tail"></div>
+            </div>
+
+            <!-- Dynamic Vector SVG Goat Character Rig -->
+            <svg id="goat-svg" viewBox="0 0 320 280" class="goat-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="goat-shadow" x="-10%" y="-10%" width="130%" height="130%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12" />
+                </filter>
+                
+                <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" />
+                  <stop offset="100%" stop-color="#f1f5f9" />
+                </linearGradient>
+
+                <linearGradient id="hornGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f59e0b" />
+                  <stop offset="100%" stop-color="#b45309" />
+                </linearGradient>
+
+                <linearGradient id="hoofGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#475569" />
+                  <stop offset="100%" stop-color="#1e293b" />
+                </linearGradient>
+              </defs>
+
+              <!-- Ground Shadow -->
+              <ellipse cx="160" cy="255" rx="90" ry="14" fill="#000000" opacity="0.12" />
+
+              <!-- Little Wagging Tail -->
+              <g id="goat-tail" class="goat-tail">
+                <path d="M 75 175 Q 55 160 62 145 Q 74 150 82 170 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5" />
+              </g>
+
+              <!-- Back Legs (articulated for trotting) -->
+              <g class="goat-legs-back">
+                <!-- Back Left Leg -->
+                <g id="leg-back-left" class="goat-leg-unit">
+                  <rect x="95" y="195" width="16" height="52" rx="7" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" />
+                  <path d="M 94 240 L 112 240 L 114 250 L 92 250 Z" fill="url(#hoofGrad)" />
+                </g>
+
+                <!-- Back Right Leg -->
+                <g id="leg-back-right" class="goat-leg-unit">
+                  <rect x="205" y="195" width="16" height="52" rx="7" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" />
+                  <path d="M 204 240 L 222 240 L 224 250 L 202 250 Z" fill="url(#hoofGrad)" />
+                </g>
+              </g>
+
+              <!-- Dynamic Parametric Belly / Body (scales with fed letters) -->
+              <g id="goat-belly-group" class="goat-belly-wrap">
+                <ellipse id="goat-belly" cx="160" cy="180" rx="72" ry="54" fill="url(#bodyGrad)" stroke="#cbd5e1" stroke-width="3" filter="url(#goat-shadow)" />
+                <!-- Fluffy fleece accents -->
+                <circle cx="120" cy="165" rx="14" ry="12" fill="#ffffff" opacity="0.8" />
+                <circle cx="195" cy="165" rx="16" ry="14" fill="#ffffff" opacity="0.8" />
+                <circle cx="160" cy="205" rx="18" ry="12" fill="#ffffff" opacity="0.8" />
+              </g>
+
+              <!-- Front Legs (articulated for trotting) -->
+              <g class="goat-legs-front">
+                <!-- Front Left Leg -->
+                <g id="leg-front-left" class="goat-leg-unit">
+                  <rect x="120" y="200" width="17" height="52" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+                  <path d="M 119 245 L 138 245 L 140 254 L 117 254 Z" fill="url(#hoofGrad)" />
+                </g>
+
+                <!-- Front Right Leg -->
+                <g id="leg-front-right" class="goat-leg-unit">
+                  <rect x="180" y="200" width="17" height="52" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+                  <path d="M 179 245 L 198 245 L 200 254 L 177 254 Z" fill="url(#hoofGrad)" />
+                </g>
+              </g>
+
+              <!-- Collar & Jingle Bell -->
+              <g id="goat-collar">
+                <path d="M 130 148 Q 160 162 190 148" stroke="#ef4444" stroke-width="7" stroke-linecap="round" fill="none" />
+                <circle cx="160" cy="160" r="7" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
+                <circle cx="160" cy="163" r="1.5" fill="#78350f" />
+              </g>
+
+              <!-- Head Assembly -->
+              <g id="goat-head" class="goat-head">
+                <!-- Curved Horns -->
+                <g id="goat-horns">
+                  <!-- Left Horn -->
+                  <path d="M 135 95 C 120 70 100 65 92 78 C 85 90 105 102 125 105 Z" fill="url(#hornGrad)" stroke="#78350f" stroke-width="2" />
+                  <path d="M 105 80 Q 112 88 118 89" stroke="#fbbf24" stroke-width="1.5" fill="none" />
+                  
+                  <!-- Right Horn -->
+                  <path d="M 185 95 C 200 70 220 65 228 78 C 235 90 215 102 195 105 Z" fill="url(#hornGrad)" stroke="#78350f" stroke-width="2" />
+                  <path d="M 215 80 Q 208 88 202 89" stroke="#fbbf24" stroke-width="1.5" fill="none" />
+                </g>
+
+                <!-- Twitching Ears -->
+                <g id="goat-ears">
+                  <!-- Left Ear -->
+                  <path id="left-ear" class="goat-ear ear-left" d="M 125 110 C 95 110 80 125 90 135 C 105 142 120 128 128 118 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+                  <path d="M 115 116 C 98 118 90 126 96 132 C 104 136 112 128 118 122 Z" fill="#fecdd3" />
+
+                  <!-- Right Ear -->
+                  <path id="right-ear" class="goat-ear ear-right" d="M 195 110 C 225 110 240 125 230 135 C 215 142 200 128 192 118 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+                  <path d="M 205 116 C 222 118 230 126 224 132 C 216 136 208 128 202 122 Z" fill="#fecdd3" />
+                </g>
+
+                <!-- Main Head Skull & Snout Base -->
+                <ellipse cx="160" cy="118" rx="38" ry="34" fill="url(#bodyGrad)" stroke="#cbd5e1" stroke-width="2" />
+                <ellipse cx="160" cy="138" rx="26" ry="20" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+                <!-- Rosy Cheeks -->
+                <circle cx="134" cy="132" r="6" fill="#f43f5e" opacity="0.25" />
+                <circle cx="186" cy="132" r="6" fill="#f43f5e" opacity="0.25" />
+
+                <!-- EYES LAYER -->
+                <g id="goat-eyes-group">
+                  <!-- Left Eye -->
+                  <g class="eye-unit eye-left">
+                    <path class="goat-eye-closed" d="M 136 114 Q 144 122 152 114" stroke="#334155" stroke-width="3" stroke-linecap="round" fill="none" />
+                    <circle class="goat-eye-open" cx="144" cy="114" r="9" fill="#ffffff" stroke="#334155" stroke-width="2" style="display: none;" />
+                    <ellipse class="goat-pupil goat-eye-open" cx="144" cy="114" rx="4.5" ry="2.5" fill="#1e293b" style="display: none;" />
+                    <circle class="goat-eye-open eye-sparkle" cx="142" cy="111" r="1.5" fill="#ffffff" style="display: none;" />
+                  </g>
+
+                  <!-- Right Eye -->
+                  <g class="eye-unit eye-right">
+                    <path class="goat-eye-closed" d="M 168 114 Q 176 122 184 114" stroke="#334155" stroke-width="3" stroke-linecap="round" fill="none" />
+                    <circle class="goat-eye-open" cx="176" cy="114" r="9" fill="#ffffff" stroke="#334155" stroke-width="2" style="display: none;" />
+                    <ellipse class="goat-pupil goat-eye-open" cx="176" cy="114" rx="4.5" ry="2.5" fill="#1e293b" style="display: none;" />
+                    <circle class="goat-eye-open eye-sparkle" cx="174" cy="111" r="1.5" fill="#ffffff" style="display: none;" />
+                  </g>
+                </g>
+
+                <!-- Snout & Nostrils -->
+                <ellipse cx="160" cy="138" rx="14" ry="9" fill="#fda4af" />
+                <ellipse cx="155" cy="138" rx="2.5" ry="1.5" fill="#881337" />
+                <ellipse cx="165" cy="138" rx="2.5" ry="1.5" fill="#881337" />
+
+                <!-- Articulated Lower Jaw & Chomping Mouth -->
+                <g id="goat-jaw" class="goat-jaw">
+                  <path d="M 148 147 Q 160 155 172 147" stroke="#334155" stroke-width="2.5" stroke-linecap="round" fill="none" />
+                  <path id="goat-beard" d="M 155 152 C 152 165 156 172 160 176 C 164 172 168 165 165 152 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+                  <circle id="goat-mouth-target" cx="160" cy="148" r="4" fill="none" opacity="0" />
+                </g>
+
+                <!-- Drool -->
+                <path id="goat-drool" class="goat-drool" d="M 167 150 C 170 156 168 162 167 165 C 165 162 165 156 167 150" fill="#38bdf8" opacity="0" />
+
+                <!-- Easter Egg Sunglasses -->
+                <g id="goat-sunglasses" class="goat-sunglasses" style="display: none;">
+                  <path d="M 132 108 L 156 108 L 152 122 L 136 122 Z" fill="#0f172a" />
+                  <path d="M 164 108 L 188 108 L 184 122 L 168 122 Z" fill="#0f172a" />
+                  <line x1="156" y1="112" x2="164" y2="112" stroke="#0f172a" stroke-width="3" />
+                  <line x1="134" y1="111" x2="152" y2="111" stroke="#38bdf8" stroke-width="1.5" opacity="0.8" />
+                  <line x1="166" y1="111" x2="184" y2="111" stroke="#38bdf8" stroke-width="1.5" opacity="0.8" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Burp Result Card (Appears after burping) -->
+      <div id="burp-result-banner" class="burp-banner">
+        <div class="burp-banner-badge">💨 BURP EVENT RECORDED!</div>
+        <div class="burp-heading">
+          YOU FED THE GOAT <span id="burp-eaten-count" class="highlight-count">0</span> CHARACTERS.
+        </div>
+        <div class="burp-sub">HE IS STILL HUNGRY.</div>
+        
+        <div class="burp-regurgitation">
+          <span class="regurg-label">Regurgitated cud:</span>
+          <span id="burp-scrambled-text" class="regurg-text">"..."</span>
+        </div>
+
+        <div class="burp-roast-card">
+          <span class="roast-goat-avatar">🐐</span>
+          <div class="roast-bubble">
+            <span class="roast-tag">Goat Roast:</span>
+            <p id="burp-roast-text" class="roast-quote">"That tasted like procrastination."</p>
+          </div>
+        </div>
+
+        <div class="burp-actions">
+          <button id="feed-again-btn" class="btn primary-btn">Feed Him More Letters 🌾</button>
+          <button id="save-score-btn" class="btn secondary-btn">Save to Leaderboard 🏆</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Particle & Flying Letter Canvas Layer (overlay) -->
+    <div id="fx-layer" class="fx-overlay"></div>
+
+    <!-- Leaderboard / Stats Modal -->
+    <div id="stats-modal" class="modal-backdrop">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h2>🏆 Feeder Leaderboard & Stats</h2>
+          <button id="close-stats-btn" class="close-modal-btn">✕</button>
+        </div>
+        
+        <div class="player-stats-grid">
+          <div class="stat-box">
+            <span class="stat-num" id="stats-alltime">0</span>
+            <span class="stat-label">All-Time Letters Eaten</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="stats-best">0</span>
+            <span class="stat-label">Best Single Feast</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="stats-burps">0</span>
+            <span class="stat-label">Total Goat Burps</span>
+          </div>
+        </div>
+
+        <h3 class="lb-subheading">Top Word Grazers</h3>
+        <div id="leaderboard-list" class="leaderboard-container">
+          <!-- Populated dynamically by leaderboard.js -->
+        </div>
+
+        <div class="modal-footer">
+          <p class="useless-quote">"There is no prize. The goat only produces cud."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional AI Key Modal -->
+    <div id="ai-key-modal" class="modal-backdrop">
+      <div class="modal-card small-modal">
+        <div class="modal-header">
+          <h2>✨ Optional Gemini AI Roasts</h2>
+          <button id="close-ai-btn" class="close-modal-btn">✕</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-desc">
+            Goatlife.com already includes <strong>50+ hilarious offline roasts</strong>.
+            If you want custom dynamic roasts tailored to your exact sentences, paste an optional Gemini API key below:
+          </p>
+          <input type="password" id="api-key-input" class="modal-input" placeholder="AIzaSy... (optional)">
+          <small class="key-hint">Saved safely in your browser's local storage only.</small>
+        </div>
+        <div class="modal-footer modal-actions">
+          <button id="save-ai-key-btn" class="btn primary-btn">Save Key</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p class="footer-joke">
+        <strong>Goatlife.com</strong> is 100% useless by design. No words are stored on servers — they are all digested into cud.
+      </p>
+      <div class="easter-egg-hints">
+        <span>Hints: Type <em>"grass"</em>, <em>"goat"</em>, poke the goat, or type at warp speed.</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/goat.js"></script>
+  <script src="js/roasts.js"></script>
+  <script src="js/eatingEngine.js"></script>
+  <script src="js/easterEggs.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
