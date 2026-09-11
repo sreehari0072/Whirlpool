@@ -31,7 +31,7 @@ For Software:
 - CSS
 - JavaScript
 - JavaScript Animation APIs / CSS Animations
-- - Git & GitHub
+- Git & GitHub
 - Antigravity / Vibe Coding
 
 For Hardware:
