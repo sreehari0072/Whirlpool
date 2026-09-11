@@ -131,11 +131,11 @@ The goat starts in a sleeping state while the user has not entered any text.
 
 The goat wakes up and moves toward the user's text to eat it.
 
-### Screenshot 3 — Full / Tired Goat
+### Screenshot 3 — Burping Of Goat
 
 ![Tired Goat](Add screenshot of the goat after eating here)
 
-After eating enough text, the goat becomes full and tired before returning to its starting position.
+After eating enough text, the goat becomes full and burps loud.
 
 ---
 
