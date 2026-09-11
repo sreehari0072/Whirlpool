@@ -12,7 +12,7 @@
 ### Team Members
 - Team Lead: Sreehari G - College Of Engineering Perumon
 - Member 2: Kenston Ignatious - College Of Engineering Perumon
-- Member 3: [Name] - [College]
+
 
 ### Project Description
 Goatlife.com is a completely useless and unnecessarily entertaining website where a goat eats whatever the user types. The goat wakes up, walks toward the text, eats the words from the right side, grows a bigger stomach, gets tired, walks back, burps, and returns for more.
