@@ -40,7 +40,7 @@ For Hardware:
 ### Implementation
 For Software:
 # Installation
-[commands]
+ https://sreehari0072.github.io/Whirlpool/
 
 # Run
 [commands]
