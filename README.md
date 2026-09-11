@@ -38,13 +38,9 @@ We introduced a hungry virtual goat that follows the user's typing.
 It:
 
 * 🐐 Wakes up when the user starts typing
-* 🚶 Walks toward the text
 * 🍴 Eats the typed words
 * 🫃 Gets a bigger stomach as it eats
-* 😴 Gets tired after eating
-* 🚶 Walks back
 * 💨 Burps
-* 🔄 Returns for another meal
 
 Because apparently, normal typing wasn't difficult enough.
 
