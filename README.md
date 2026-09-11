@@ -121,19 +121,20 @@ The project combines JavaScript logic with CSS animations to create the interact
 
 ### Screenshot 1 — Sleeping Goat
 
-![Sleeping Goat](Add screenshot of the goat sleeping here)
+<img width="1895" height="837" alt="Sleeping" src="https://github.com/user-attachments/assets/5dff8c3a-bea9-4574-9bd3-a5b0eb8aa0e2" />
 
 The goat starts in a sleeping state while the user has not entered any text.
 
 ### Screenshot 2 — Goat Eating Text
 
-![Goat Eating](Add screenshot of the goat eating the text here)
+<img width="1900" height="837" alt="eating" src="https://github.com/user-attachments/assets/a71bd020-77ca-48cf-9ade-9eb92fa81502" />
+
 
 The goat wakes up and moves toward the user's text to eat it.
 
 ### Screenshot 3 — Burping Of Goat
 
-![Tired Goat](Add screenshot of the goat after eating here)
+<img width="1897" height="837" alt="burp" src="https://github.com/user-attachments/assets/d61a02e5-691d-4a02-9362-2c4640f3b04b" />
 
 After eating enough text, the goat becomes full and burps loud.
 
