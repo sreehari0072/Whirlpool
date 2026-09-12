@@ -227,7 +227,7 @@ Made with ❤️ and absolutely no necessity at all at **TinkerHub Useless Proje
                  └──────────┬──────────┘
                             ↓
                  ┌─────────────────────┐
-                 │   Goat wakes up     │                     │
+                 │   Goat wakes up     │                     
                  └──────────┬──────────┘
                             ↓
                  ┌─────────────────────┐
@@ -261,7 +261,10 @@ Made with ❤️ and absolutely no necessity at all at **TinkerHub Useless Proje
                             │ ┌─────────────────┐
                             └→│ Ready to eat    │
                               │     again       │
-                              └─────────────────┘)
+                              └─────────────────┘
+
+             <img width="1024" height="1536" alt="flow_goat life" src="https://github.com/user-attachments/assets/0021160b-6249-48ca-baa8-478b9f59c611" />
+
 *## Workflow
 
 The Goat Life website follows a simple interactive workflow:
