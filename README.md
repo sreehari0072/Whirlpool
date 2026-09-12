@@ -263,7 +263,8 @@ Made with ❤️ and absolutely no necessity at all at **TinkerHub Useless Proje
                               │     again       │
                               └─────────────────┘
 
-             <img width="1024" height="1536" alt="flow_goat life" src="https://github.com/user-attachments/assets/0021160b-6249-48ca-baa8-478b9f59c611" />
+   <img width="353" height="522" alt="Screenshot 2026-09-12 070303" src="https://github.com/user-attachments/assets/0b729449-e3e2-46fa-8d63-d7eed8db2eb7" />
+         
 
 *## Workflow
 
