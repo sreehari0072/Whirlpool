@@ -202,8 +202,8 @@ Made with ❤️ and absolutely no necessity at all at **TinkerHub Useless Proje
 ![Static Badge](https://img.shields.io/badge/UselessProjects--26-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)
 
 
-# Diagrams#
-## Workflow##
+# Diagrams
+## Workflow
     
   <img width="430" height="637" alt="Screenshot 2026-09-12 070508" src="https://github.com/user-attachments/assets/8501866f-c3d5-4d79-82bd-b33695f1824f" />
 
