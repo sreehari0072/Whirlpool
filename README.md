@@ -263,8 +263,8 @@ Made with ❤️ and absolutely no necessity at all at **TinkerHub Useless Proje
                               │     again       │
                               └─────────────────┘
 
-   <img width="353" height="522" alt="Screenshot 2026-09-12 070303" src="https://github.com/user-attachments/assets/0b729449-e3e2-46fa-8d63-d7eed8db2eb7" />
-         
+  <img width="430" height="637" alt="Screenshot 2026-09-12 070508" src="https://github.com/user-attachments/assets/8501866f-c3d5-4d79-82bd-b33695f1824f" />
+
 
 *## Workflow
 
